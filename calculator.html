@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            display: flex;
+            justify-content: center;
+            border: 2px solid black;
+        }
+        div{
+            border: 2px solid red;
+            height: 400px;
+            width: 250px;
+            text-align: center;
+            background: aqua;
+           
+        }
+        ul {
+            display: flex;
+            
+        }
+
+        li {
+            list-style: none;
+            margin: 5px;
+            
+        }
+        input{
+            text-align: right;
+            margin: 20px;
+            height: 35px;
+            width: 200px;
+            background: none;
+            border: none;
+            
+            
+        }
+        button{
+            padding: 5px 8px 5px 8px;
+            border: none;
+            margin: 5px;
+            background: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <input type="text">
+            <ul>
+                <li><button onclick="back()">AC</button></li>
+            </ul>
+            <ul>
+                <li><button onclick="cal(this.innerText)">7</button></li>
+                <li><button onclick="cal(this.innerText)">8</button></li>
+                <li><button onclick="cal(this.innerText)">9</button></li>
+                <li><button onclick="cal(this.innerText)">/</button></li>
+            </ul>
+            <ul>
+                <li><button onclick="cal(this.innerText)">4</button></li>
+                <li><button onclick="cal(this.innerText)">5</button></li>
+                <li><button onclick="cal(this.innerText)">6</button></li>
+                <li><button onclick="cal(this.innerText)">*</button></li>
+            </ul>
+            <ul>
+                <li><button onclick="cal(this.innerText)">1</button></li>
+                <li><button onclick="cal(this.innerText)">2</button></li>
+                <li><button onclick="cal(this.innerText)">3</button></li>
+                <li><button onclick="cal(this.innerText)">+</button></li>
+            </ul>
+            <ul>
+                <li><button onclick="cal(this.innerText)">0</button></li>
+                <li><button onclick="cal(this.innerText)">.</button></li>
+                <li><button onclick="cal(this.innerText)">-</button></li>
+                <li><button onclick="result()">=</button></li>
+            </ul>
+            
+        </div>
+    </section>
+    <script>
+      
+        function cal(id) {
+            
+            document.getElementsByTagName('input')[0].value += id
+           
+        }
+        function result() {
+            var har = document.getElementsByTagName('input')[0].value
+            document.getElementsByTagName('input')[0].value = eval(har)
+            
+        }
+        function back(){
+            document.getElementsByTagName('input')[0].value=" "
+            
+        }
+    </script>
+</body>
+
+</html>
